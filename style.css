@@ -1,0 +1,85 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Fredoka', sans-serif; }
+body { overflow-x: hidden; background: white; }
+html { scroll-behavior: smooth; }
+
+/* --- HEADER CENTRALIZADO --- */
+.hero-section { background: #ffde00; display: flex; flex-direction: column; align-items: center; padding-top: 30px; text-align: center; }
+.logo-topo { width: 280px; margin-bottom: 25px; display: block; }
+
+.main-nav { background: white; display: inline-block; padding: 12px 45px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 40px; }
+.main-nav ul { list-style: none; display: flex; gap: 35px; }
+.main-nav a { text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+
+.img-full { width: 100%; display: block; }
+
+/* --- SEÇÕES --- */
+.section-container { padding: 80px 20px 100px 20px; text-align: center; }
+.section-title { color: #0096d6; font-size: 2.5rem; font-weight: 700; margin-bottom: 50px; text-transform: uppercase; }
+
+/* --- CARROSSEL --- */
+.carousel-wrapper { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; -webkit-overflow-scrolling: touch; padding-left: 5%; }
+.video-item iframe { width: 320px; aspect-ratio: 16/9; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.dots { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+.dot { width: 12px; height: 12px; background: #ddd; border-radius: 50%; }
+.dot.active { background: #f39200; }
+
+/* --- PERSONAGENS (FLIP) --- */
+.char-grid { display: flex; width: 100%; height: 400px; }
+.char-card { flex: 1; position: relative; perspective: 1000px; }
+.card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform-style: preserve-3d; }
+.char-card:hover .card-inner { transform: rotateY(180deg); }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.card-front img { width: 80%; }
+.card-back { transform: rotateY(180deg); color: white; padding: 20px; text-align: center; }
+
+.yellow { background: #f7e06c; } .yellow .card-back { background: #d4bc3a; }
+.pink { background: #f0a1bc; } .pink .card-back { background: #c97592; }
+.lightblue { background: #add8e6; } .lightblue .card-back { background: #79abc2; }
+.green { background: #a8d582; } .green .card-back { background: #7ba856; }
+.darkblue { background: #7295d1; } .darkblue .card-back { background: #4b6fa8; }
+
+/* --- JOGOS (CORREÇÃO DE ESPAÇAMENTO) --- */
+.games-wrapper { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 20px; }
+.game-box { display: flex; flex-direction: column; align-items: center; max-width: 480px; width: 100%; margin-bottom: 50px; }
+.game-box img { width: 100%; border: 8px solid #a8d582; border-radius: 25px; margin-bottom: 25px; }
+.btn-main { padding: 15px 80px; border-radius: 40px; color: white; text-decoration: none; font-weight: 700; font-size: 1.3rem; display: inline-block; transition: 0.3s; }
+.btn-main:hover { transform: scale(1.05); }
+.btn-blue { background: #0096d6; }
+.btn-cyan { background: #00adef; }
+
+/* --- ROCKET (CORREÇÃO DA SOBREPOSIÇÃO) --- */
+.rocket-blue-area { background: #0096d6; padding: 100px 20px; }
+.white-card { background: white; border-radius: 50px; max-width: 1100px; margin: 0 auto; display: flex; align-items: center; padding: 60px; gap: 50px; }
+.rocket-img { width: 45%; max-width: 400px; height: auto; }
+.rocket-info { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; width: 50%; }
+.rocket-info h3 { font-size: 2.2rem; color: #000; font-weight: 700; }
+.rocket-info p { font-size: 1.1rem; color: #333; line-height: 1.5; margin-bottom: 10px; }
+.btn-youtube { background: #00adef; color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
+.btn-youtube:hover { background: #008fbc; }
+
+/* --- RODAPÉ --- */
+.footer-end { background: #ffde00; padding: 40px 20px; }
+.footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.f-logo { width: 120px; }
+.f-social { display: flex; gap: 20px; }
+.f-social img { width: 35px; transition: 0.3s; }
+.f-social img:hover { transform: translateY(-5px); }
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+    .logo-topo { width: 180px; }
+    .main-nav { padding: 10px 20px; width: 90%; }
+    .main-nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .main-nav a { font-size: 0.85rem; }
+    
+    .char-grid { flex-wrap: wrap; height: auto; }
+    .char-card { flex: none; width: 50%; height: 250px; }
+    .char-card:last-child { width: 100%; }
+    
+    .white-card { flex-direction: column; text-align: center; padding: 40px 20px; gap: 30px; }
+    .rocket-img { width: 80%; }
+    .rocket-info { width: 100%; align-items: center; }
+    
+    .footer-content { flex-direction: column; gap: 30px; text-align: center; }
+}
