@@ -73,9 +73,31 @@ html { scroll-behavior: smooth; }
     .main-nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
     .main-nav a { font-size: 0.85rem; }
     
-    .char-grid { flex-wrap: wrap; height: auto; }
-    .char-card { flex: none; width: 50%; height: 250px; }
-    .char-card:last-child { width: 100%; }
+    .char-grid { 
+        display: flex;
+        flex-wrap: wrap; 
+        height: auto; 
+    }
+
+    /* Regra para os personagens normais ficarem em duplas */
+    .char-card { 
+        flex: none; 
+        width: 50%; 
+        height: 250px; 
+    }
+
+    /* AJUSTE DO POPIPI: Fundo claro, largura total e no topo */
+    .char-card.lightblue { 
+        width: 100%; 
+        height: 350px; 
+        order: -1; /* Move o Popipi para o topo da lista */
+        background: #e0f2f7; /* Azul bem clarinho como solicitado */
+    }
+
+    /* Remove a regra antiga que deixava o último personagem grande */
+    .char-card:last-child { 
+        width: 50%; 
+    }
     
     .white-card { flex-direction: column; text-align: center; padding: 40px 20px; gap: 30px; }
     .rocket-img { width: 80%; }
